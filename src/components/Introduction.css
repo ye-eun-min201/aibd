@@ -4,11 +4,12 @@
 }
 
 .introduction-title {
-  font-size: 70px;
+  font-size: 68px;
   display: flex;
   justify-content: center;
   text-align: center;
   margin-left: 20px;
+  gap:-c5rem;
 }
 
 .nav-buttons {
@@ -18,17 +19,25 @@
 }
 
 .nav-buttons button {
+  width: 15rem;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  height: 3rem;
   margin-right: 10px;
   padding: 10px 15px;
-  background-color: #204598;
+  gap:5rem;
+  background-color: red;
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   font-family: Pretendard, sans-serif;
-  font-size: 0.875rem;
-  font-weight: 500;
+  font-size: 1rem;
+  font-weight: 700;
   line-height: 1.25rem;
+  border: none;
 }
 
 .nav-buttons button:hover {
@@ -47,17 +56,18 @@
   font-size: 20px;
 }
 
-.image {
+.introduction-image {
   flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.image img {
+.shorts-image {
   height: auto;
-  width: 300px;
+  width: 200px;
   margin-top: -10px;
+  border: #fff;
 }
 
 h2 {

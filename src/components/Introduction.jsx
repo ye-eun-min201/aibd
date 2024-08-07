@@ -8,8 +8,12 @@ const Introduction = () => {
     <section className="introduction">
       <div className="introduction-title section-padding">
         유튜브 쇼츠와 인기 급상승 순위
-        <div className="image">
-          <img src={shortsImage} alt="유튜브 쇼츠 이미지" />
+        <div className="introduction-image">
+          <img
+            className="shorts-image"
+            src={shortsImage}
+            alt="유튜브 쇼츠 이미지"
+          />
         </div>
       </div>
       <div className="nav-buttons">

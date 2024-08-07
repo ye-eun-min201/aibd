@@ -4,11 +4,22 @@ import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 import "../components/main.css"; // 스타일링을 위한 CSS 파일
 import Footer from "./Footer";
+
+// 시간을 30분 단위로 반올림하는 함수
+const getRoundedTime = () => {
+  const now = new Date();
+  const minutes = now.getMinutes();
+  const roundedMinutes = minutes < 30 ? 0 : 30;
+  now.setMinutes(roundedMinutes);
+  now.setSeconds(0);
+  now.setMilliseconds(0);
+  return now.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+};
+
 const Main = () => {
   const [videos, setVideos] = useState([]);
-  const [currentTime, setCurrentTime] = useState(
-    new Date().toLocaleTimeString()
-  );
+  const [currentTime, setCurrentTime] = useState(getRoundedTime());
+
   const videoLinks = [
     "https://www.youtube.com/shorts/2aUrzpQthas",
     "https://www.youtube.com/shorts/qaPNna9Ri3c",
@@ -29,31 +40,37 @@ const Main = () => {
 
   const API_KEY = "AIzaSyBqQ6AKLJk-Pb2oSDo93hAu2qc3hLT_JzY";
 
-  useEffect(() => {
-    const fetchVideoDetails = async () => {
-      const videoIds = videoLinks.map((link) => getVideoIdFromUrl(link));
-      const response = await axios.get(
-        "https://www.googleapis.com/youtube/v3/videos",
-        {
-          params: {
-            part: "snippet",
-            id: videoIds.join(","),
-            key: API_KEY,
-          },
-        }
-      );
-      setVideos(response.data.items);
-    };
+  const fetchVideoDetails = async () => {
+    const videoIds = videoLinks.map((link) => getVideoIdFromUrl(link));
+    const response = await axios.get(
+      "https://www.googleapis.com/youtube/v3/videos",
+      {
+        params: {
+          part: "snippet",
+          id: videoIds.join(","),
+          key: API_KEY,
+        },
+      }
+    );
+    setVideos(response.data.items);
+  };
 
+  useEffect(() => {
     fetchVideoDetails();
   }, []);
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentTime(new Date().toLocaleTimeString());
-    }, 1000);
+    const updateCurrentTime = () => {
+      setCurrentTime(getRoundedTime());
+      fetchVideoDetails();
+    };
 
-    return () => clearInterval(timer);
+    const interval = setInterval(() => {
+      updateCurrentTime();
+      clearInterval(interval); // 30분 후에 인터벌 정지
+    }, 30 * 60 * 1000); // 30분마다 시간 갱신
+
+    return () => clearInterval(interval); // 컴포넌트가 언마운트될 때 인터벌을 정리
   }, []);
 
   const youtubePopupHandler = (videoId) => {
@@ -95,9 +112,8 @@ const Main = () => {
       <div className="video-container-title">
         🔶실시간 상위 15개 유튜브 인기 쇼츠 모아보기🕣
       </div>
-      <div className="time">
-        업데이트 시간(매 시 정각 마다 변동): {currentTime}
-      </div>
+      <div className="time">마지막으로 업데이트 된 시간: {currentTime}</div>
+      <div>(30분마다 갱신)</div>
       <div className="video-list">
         {videos.map((video, index) => (
           <div

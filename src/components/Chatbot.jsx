@@ -21,7 +21,7 @@ const Chatbot = () => {
         }}
       >
         <iframe
-          src="https://huggingface.co/chat/conversation/66afa2cabada7becc3594390"
+          src="https://hf.co/chat/assistant/66ab2212c3fc41155cd764de"
           style={{
             border: "none",
             width: "100%",
