@@ -30,7 +30,6 @@
   
   .success .success-cases {
     display: flex;
-    flex-wrap: wrap;
     gap: 20px;
     margin-top: 5rem;
 
