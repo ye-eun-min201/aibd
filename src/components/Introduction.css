@@ -52,7 +52,7 @@
 
 .text {
   flex: 1;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 
 .introduction-image {
@@ -87,7 +87,7 @@ h2 {
 }
 
 .introduction-text{
-  font-size: 2rem;
+  font-size: 1.5rem;
   line-height: 3rem;
   letter-spacing: -0.05rem;
 }
