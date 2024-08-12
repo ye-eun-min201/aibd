@@ -14,8 +14,8 @@ const Success = () => {
         url: "https://www.youtube.com/watch?v=lTnSbM91E3w",
       },
       {
-        name: "GH'S",
-        url: "https://www.youtube.com/watch?v=lr4fwvwx2U0",
+        name: "회사원A",
+        url: "https://www.youtube.com/watch?v=7-HlwU6yGrE",
       },
     ],
     "푸드/먹방": [

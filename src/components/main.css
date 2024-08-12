@@ -45,11 +45,24 @@
 }
 
 h3 {
-  font-size: 16px;
-  margin: 10px 0;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  margin-top: 5rem;
 }
 
 p {
-  font-size: 14px;
+  margin-top:2rem;
+  font-size: 1.5rem;
   color: #555;
+}
+
+video-title{
+  font-size: 1rem;
+}
+
+
+.video-sub{
+  font-size: 0.8rem;
+  color: #aeafaf;
+  margin-top: 1rem;
 }

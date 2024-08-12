@@ -126,8 +126,8 @@ const Main = () => {
               src={video.snippet.thumbnails.medium.url}
               alt={video.snippet.title}
             />
-            <h3>{video.snippet.title}</h3>
-            <p>{video.snippet.description}</p>
+            <div className="video-title">{video.snippet.title}</div>
+            <div className="video-sub">{video.snippet.description}</div>
           </div>
         ))}
       </div>
