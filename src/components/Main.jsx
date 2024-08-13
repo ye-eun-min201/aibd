@@ -21,21 +21,21 @@ const Main = () => {
   const [currentTime, setCurrentTime] = useState(getRoundedTime());
 
   const videoLinks = [
-    "https://www.youtube.com/shorts/2aUrzpQthas",
-    "https://www.youtube.com/shorts/qaPNna9Ri3c",
-    "https://www.youtube.com/shorts/AzgNveIcLTs",
-    "https://www.youtube.com/shorts/7ddCfCYv3aA",
-    "https://www.youtube.com/shorts/5IHY8zsH_Hk",
-    "https://www.youtube.com/shorts/2Vme7ujHqCE",
-    "https://www.youtube.com/shorts/3P7N_pze5-k",
-    "https://www.youtube.com/shorts/JiGpfhESTAA",
-    "https://www.youtube.com/shorts/gBTevAKUfRs",
-    "https://www.youtube.com/shorts/RV4OGtOJ44M",
-    "https://www.youtube.com/shorts/3MKW3MD5o8Y",
-    "https://www.youtube.com/shorts/evdIin3kKOQ",
-    "https://www.youtube.com/shorts/1TS6grORXG8",
-    "https://www.youtube.com/shorts/JEgo5SmNgqg",
-    "https://www.youtube.com/shorts/6ph7y8h3pDY",
+    "https://www.youtube.com/shorts/gwhN7jhtwY8",
+    "https://www.youtube.com/shorts/G4epDDRpIwI",
+    "https://www.youtube.com/shorts/0SsLN_paolQ",
+    "https://www.youtube.com/shorts/YknwLQhh5V0",
+    "https://www.youtube.com/shorts/Z-jh4Fkqig4",
+    "https://www.youtube.com/shorts/SWs0CyZZvNM",
+    "https://www.youtube.com/shorts/o0nexSutq6E",
+    "https://www.youtube.com/shorts/2WWXSoS2Mw8",
+    "https://www.youtube.com/shorts/CR-KD6zv_0g",
+    "https://www.youtube.com/shorts/Eg2G131btkg",
+    "https://www.youtube.com/shorts/Qu6rv6oed-c",
+    "https://www.youtube.com/shorts/xUIUu0tos10",
+    "https://www.youtube.com/shorts/fToZQ3F11HQ",
+    "https://www.youtube.com/shorts/4F-5wG1e64I",
+    "https://www.youtube.com/shorts/Nni9uoa8Ylw",
   ];
 
   const API_KEY = "AIzaSyBqQ6AKLJk-Pb2oSDo93hAu2qc3hLT_JzY";
